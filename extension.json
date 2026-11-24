@@ -1,0 +1,62 @@
+{
+    "name": "laveroadmin/grid-sortable",
+    "title": {
+        "en": "Grid Sortable",
+        "ru": "Сортировка строк грида"
+    },
+    "description": {
+        "en": "Drag-and-drop row reordering for Eloquent Model-Grid tables.",
+        "ru": "Drag-and-drop перетаскивание и сортировка строк в таблицах Model-Grid."
+    },
+    "category": "tools",
+    "icon": "icon-arrows-alt-v",
+    "version": "1.0.0",
+    "author": {
+        "name": "Aleksandr Kireev",
+        "email": "hello@bespredel.name",
+        "url": "https://bespredel.name"
+    },
+    "github": "https://github.com/LaveroAdmin/grid-sortable",
+    "setup": {
+        "commands": [
+            {
+                "cmd": "php artisan admin:import grid-sortable",
+                "desc": {
+                    "en": "Publish sorting JS and CSS assets",
+                    "ru": "Публикация JS и CSS скриптов сортировки"
+                }
+            }
+        ],
+        "config": {
+            "file": "config/admin.php",
+            "code": "'grid-sortable' => [\n    'enable' => true,\n],"
+        },
+        "requirements": {
+            "en": [
+                "PHP >= 8.1",
+                "An 'order' integer column in the target database table"
+            ],
+            "ru": [
+                "PHP >= 8.1",
+                "Поле 'order' (или аналогичное integer) в таблице модели"
+            ]
+        },
+        "notes": {
+            "en": [
+                "The model must implement Spatie\\EloquentSortable\\Sortable and use the SortableTrait.",
+                "In your Grid controller: $grid->sortable();"
+            ],
+            "ru": [
+                "Модель должна реализовывать Spatie\\EloquentSortable\\Sortable и использовать trait Spatie\\EloquentSortable\\SortableTrait.",
+                "В контроллере грида вызовите: $grid->sortable();"
+            ]
+        }
+    },
+    "key": "grid-sortable",
+    "compatibility": {
+        "php": ">=8.1",
+        "laravel": "^10.0 || ^11.0 || ^12.0 || ^13.0",
+        "admin": "^1.0",
+        "extensions": []
+    }
+}
